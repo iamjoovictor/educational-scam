@@ -1,0 +1,11 @@
+# Node modules
+node_modules/
+
+# Banco de dados SQLite
+db/database.sqlite
+
+# Logs
+*.log
+
+# Ambiente
+.env
