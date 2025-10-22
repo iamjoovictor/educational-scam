@@ -43,20 +43,20 @@ const FakePayment = () => {
     };
 
     return (
-        <div className="bg-gray-100 min-h-screen flex flex-col items-center justify-center p-4 font-sans">
+        <div className="bg-gradient-to-br from-blue-50 via-blue-100 to-blue-200 min-h-screen flex flex-col items-center justify-center p-4 font-sans">
             <div className="bg-transparent rounded-xl mt-8 mb-8 flex justify-center">
-                <h1 className="text-2xl font-bold text-gray-800">
+                <h1 className="text-2xl font-bold text-slate-800">
                     Golpe - Falso Pagamento
                 </h1>
             </div>
 
             <header className="text-center mb-4">
-                <h1 className="text-2xl font-bold text-gray-800">Tech Ofertas Brasil</h1>
-                <p className="text-gray-500">Página de Pagamento Seguro</p>
+                <h1 className="text-2xl font-bold text-slate-800">Tech Ofertas Brasil</h1>
+                <p className="text-slate-600">Página de Pagamento Seguro</p>
             </header>
 
-            <div className="w-full max-w-md bg-white rounded-xl shadow-2xl">
-                <div className="bg-blue-600 text-white text-center p-4">
+            <div className="w-full max-w-md bg-white/80 backdrop-blur-sm rounded-xl shadow-2xl border border-white/50">
+                <div className="bg-gradient-to-r from-blue-600 to-blue-800 text-white text-center p-4 rounded-t-xl">
                     <h2 className="text-lg font-bold">Sua oferta expira em:</h2>
                     <p className="text-4xl font-mono tracking-widest">
                         {formatTime(timeLeft)}
@@ -69,13 +69,13 @@ const FakePayment = () => {
 
                 <div className="p-6">
                     <div className="text-center mb-6">
-                        <p className="text-gray-600">Total a pagar:</p>
-                        <p className="text-3xl font-bold text-gray-900">R$ 3.499,90</p>
-                        <p className="text-sm text-gray-500">Referente a: iPhone 16 Pro Max</p>
+                        <p className="text-slate-600">Total a pagar:</p>
+                        <p className="text-3xl font-bold text-slate-900">R$ 3.499,90</p>
+                        <p className="text-sm text-slate-500">Referente a: iPhone 16 Pro Max</p>
                     </div>
 
                     <div className="flex border-b mb-6">
-                        <button className="flex-1 text-blue-600 border-b-2 border-blue-600 py-3 font-semibold flex items-center justify-center gap-2">
+                        <button className="flex-1 text-blue-700 border-b-2 border-blue-700 py-3 font-semibold flex items-center justify-center gap-2">
                             <QrCode size={20} /> PIX
                         </button>
                         <button className="flex-1 text-gray-400 py-3 font-semibold flex items-center justify-center gap-2 cursor-not-allowed opacity-50">
@@ -85,7 +85,7 @@ const FakePayment = () => {
                             <Barcode size={20} /> Boleto
                         </button>
                     </div>
-                    <p className="text-xs text-center text-red-500 mb-4 -mt-4">
+                    <p className="text-xs text-center text-red-600 mb-4 -mt-4">
                         Desconto aplicado! Pagamento exclusivo via PIX.
                         <RedFlag
                             number="2"
@@ -94,43 +94,39 @@ const FakePayment = () => {
                     </p>
 
                     <div className="text-center">
-                        <p className="font-semibold mb-2">Pague com PIX para aprovação imediata!</p>
-                        <img src={`https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${fakePixCode}`} alt="QR Code PIX" className="mx-auto rounded-lg border p-1" />
+                        <p className="font-semibold mb-2 text-slate-800">Pague com PIX para aprovação imediata!</p>
+                        <img src={`https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${fakePixCode}`} alt="QR Code PIX" className="mx-auto rounded-lg border p-1 bg-white" />
 
-                        <p className="text-sm text-gray-500 my-4">Ou use o PIX Copia e Cola:</p>
+                        <p className="text-sm text-slate-500 my-4">Ou use o PIX Copia e Cola:</p>
 
                         <div className="relative">
-                            <textarea readOnly value={fakePixCode} className="w-full h-24 p-2 text-xs bg-gray-100 border rounded-md resize-none text-gray-600"></textarea>
-                            <button onClick={handleCopy} className="absolute bottom-2 right-2 bg-blue-600 text-white px-3 py-1 rounded-md text-sm hover:bg-blue-700">
+                            <textarea readOnly value={fakePixCode} className="w-full h-24 p-2 text-xs bg-blue-50 border border-blue-100 rounded-md resize-none text-slate-600"></textarea>
+                            <button onClick={handleCopy} className="absolute bottom-2 right-2 bg-gradient-to-r from-blue-600 to-blue-800 text-white px-3 py-1 rounded-md text-sm hover:scale-105 transition-transform shadow">
                                 {copied ? 'Copiado!' : 'Copiar'}
                             </button>
                         </div>
 
                         <div className="mt-6">
-                            <div className="text-left bg-white p-4 rounded-lg">
-                                <p className="text-sm font-bold mb-2 text-gray-800">
+                            <div className="text-left bg-white/80 p-4 rounded-lg border border-blue-100">
+                                <p className="text-sm font-bold mb-2 text-slate-800">
                                     Confira os dados antes de pagar:
                                     <RedFlag
                                         number="3"
                                         description="O beneficiário é uma pessoa física (Maria J. da Silva, com CPF). Compras em lojas devem ter como beneficiário a própria empresa (Pessoa Jurídica, com CNPJ).">
                                     </RedFlag>
                                 </p>
-                                <div className="text-sm space-y-1 text-gray-700">
+                                <div className="text-sm space-y-1 text-slate-700">
                                     <p>
-                                        <strong>Nome:</strong>
-                                        Maria J. da Silva
+                                        <strong>Nome:</strong> Maria J. da Silva
                                     </p>
                                     <p>
-                                        <strong>CPF:</strong>
-                                        ***.123.456-**
+                                        <strong>CPF:</strong> ***.123.456-**
                                     </p>
                                     <p>
-                                        <strong>Instituição:</strong>
-                                        Banco Digital Genérico S.A.
+                                        <strong>Instituição:</strong> Banco Digital Genérico S.A.
                                     </p>
-                                    <p className="mt-2 pt-2 border-t">
-                                        <strong>Chave:</strong>
-                                        maria.silva1998@gmail.com
+                                    <p className="mt-2 pt-2 border-t border-blue-100">
+                                        <strong>Chave:</strong> maria.silva1998@gmail.com
                                     </p>
                                 </div>
                             </div>
@@ -138,7 +134,7 @@ const FakePayment = () => {
                     </div>
                 </div>
 
-                <footer className="bg-gray-50 p-4 text-center border-t">
+                <footer className="bg-blue-50/80 backdrop-blur-sm p-4 text-center border-t border-blue-100 rounded-b-xl">
                     <div className="flex items-center justify-center gap-2 text-sm text-green-700">
                         <ShieldCheck size={20} />
                         <p>Ambiente de pagamento seguro.</p>
@@ -148,7 +144,7 @@ const FakePayment = () => {
                 <div className="bg-transparent rounded-xl mt-8 mb-8 mr-5 flex justify-end">
                     <button
                         onClick={handleClick}
-                        className="bg-blue-600 text-white font-bold text-lg px-4 py-2 rounded-lg hover:bg-blue-700 transition-transform transform hover:scale-105 shadow-lg"
+                        className="bg-gradient-to-r from-blue-600 to-blue-800 text-white font-bold text-lg px-4 py-2 rounded-lg hover:scale-105 transition-transform shadow-lg"
                     >
                         Próximo
                     </button>

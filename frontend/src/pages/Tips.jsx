@@ -55,25 +55,41 @@ function Tips() {
 
   return (
     <>
-      <div className="max-w-md mx-auto mt-10 p-6 bg-white rounded shadow">
-        <h2 className="text-xl font-bold mb-4">
-          Dicas para evitar golpes de {tips.title}
-        </h2>
-        <ul className="list-disc pl-5 space-y-2">
-          {
-            tips.value.map((tip, i) =>
-              <li key={i}>{tip}</li>)
-          }
-        </ul>
+      <div className="bg-gradient-to-br from-blue-50 via-blue-100 to-blue-200 min-h-screen">
+        <main className="container mx-auto max-w-4xl p-4 sm:p-6 lg:p-8">
+          <div className="bg-transparent rounded-xl mt-8 mb-8 flex justify-center">
+            <h1 className="text-2xl font-bold text-slate-800">
+              Dicas de Segurança - Golpes de {tips.title}
+            </h1>
+          </div>
 
-        <div className="bg-transparent rounded-xl mt-8 flex justify-end">
-          <button
-            onClick={handleClick}
-            className={`${type == 'payment' ? "bg-green-600 hover:bg-green-700" : "bg-blue-600 hover:bg-blue-700"} text-white font-bold text-lg px-4 py-2 rounded-lg transition-transform transform hover:scale-105 shadow-lg`}
-          >
-            {tips.nextButton}
-          </button>
-        </div>
+          <div className="bg-white/80 backdrop-blur-sm rounded-xl shadow-2xl border border-white/50 p-6 md:p-8">
+            <div className="space-y-6">
+              {tips.value.map((tip, index) => (
+                <div
+                  key={index}
+                  className="p-4 rounded-lg border border-blue-100 bg-blue-50/50 backdrop-blur-sm hover:shadow-md transition-all"
+                >
+                  <h3 className="text-lg font-semibold text-slate-800 mb-2 flex items-center gap-2">
+                    <span className="flex items-center justify-center w-6 h-6 rounded-full bg-gradient-to-r from-blue-600 to-blue-800 text-white text-sm">
+                      {index + 1}
+                    </span>
+                    {tip}
+                  </h3>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="bg-transparent rounded-xl mt-8 flex justify-end">
+            <button
+              onClick={handleClick}
+              className={`${type == 'payment' ? "bg-green-600 hover:bg-green-700" : "bg-blue-600 hover:bg-blue-700"} text-white font-bold text-lg px-4 py-2 rounded-lg transition-transform transform hover:scale-105 shadow-lg`}
+            >
+              {tips.nextButton}
+            </button>
+          </div>
+        </main>
       </div>
     </>
   );

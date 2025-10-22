@@ -36,33 +36,35 @@ function LogsTable() {
     }, []);
 
     return (
-        <div className="p-8 bg-gray-50 min-h-screen">
-            <h2 className="text-2xl font-bold mb-6 text-gray-800">Logs Registrados</h2>
-            <div className="overflow-x-auto">
-                <table className="min-w-full bg-white rounded-lg shadow">
-                    <thead>
-                        <tr className="bg-blue-600 text-white">
-                            <th className="py-3 px-6 text-left">Tipo</th>
-                            <th className="py-3 px-6 text-left">Data de Registro</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {logs.length === 0 ? (
-                            <tr>
-                                <td colSpan="3" className="py-4 px-6 text-center text-gray-500">
-                                    Nenhum registro de logs.
-                                </td>
+        <div className="min-h-screen bg-gradient-to-br from-blue-50 via-blue-100 to-blue-200 p-8 flex items-start justify-center">
+            <div className="w-full max-w-4xl bg-white/80 backdrop-blur-sm rounded-2xl shadow-2xl border border-white/50 p-6">
+                <h2 className="text-2xl font-bold mb-6 text-slate-800">Logs Registrados</h2>
+                <div className="overflow-x-auto rounded-lg">
+                    <table className="min-w-full bg-transparent">
+                        <thead>
+                            <tr className="bg-gradient-to-r from-blue-600 to-blue-800 text-white">
+                                <th className="py-3 px-6 text-left">Tipo</th>
+                                <th className="py-3 px-6 text-left">Data de Registro</th>
                             </tr>
-                        ) : (
-                            logs.map((log, idx) => (
-                                <tr key={idx} className="border-b hover:bg-blue-50">
-                                    <td className="py-3 px-6">{log.type}</td>
-                                    <td className="py-3 px-6">{log.timestamp}</td>
+                        </thead>
+                        <tbody>
+                            {logs.length === 0 ? (
+                                <tr>
+                                    <td colSpan="2" className="py-4 px-6 text-center text-slate-500">
+                                        Nenhum registro de logs.
+                                    </td>
                                 </tr>
-                            ))
-                        )}
-                    </tbody>
-                </table>
+                            ) : (
+                                logs.map((log, idx) => (
+                                    <tr key={idx} className="border-b last:border-b-0 hover:bg-blue-50 transition-colors">
+                                        <td className="py-3 px-6 text-slate-700">{log.type}</td>
+                                        <td className="py-3 px-6 text-slate-700">{log.timestamp}</td>
+                                    </tr>
+                                ))
+                            )}
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     );

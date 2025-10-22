@@ -31,29 +31,25 @@ function FakeEmail() {
   };
 
   return (
-    <div className="bg-gray-100 min-h-screen flex items-center justify-center p-4 font-sans">
-      <div className="w-full max-w-4xl bg-white rounded-lg shadow-xl">
+    <div className="bg-gradient-to-br from-blue-50 via-blue-100 to-blue-200 min-h-screen flex items-center justify-center p-4 font-sans">
+      <div className="w-full max-w-4xl bg-white/80 backdrop-blur-sm rounded-xl shadow-2xl border border-white/50">
         <div className="bg-transparent rounded-xl mt-8 mb-8 flex justify-center">
-          <h1 className="text-2xl font-bold text-gray-800">
+          <h1 className="text-2xl font-bold text-slate-800">
             Golpe - E-mail Falso
           </h1>
         </div>
 
-        <div className="bg-gray-50 p-4 border-b">
-          <p className="text-sm text-gray-700">
-            <strong>De:</strong> {emailData.phishingSenderName} &lt;
-            {emailData.phishingSenderEmail}
-            <RedFlag
-              number="1"
-              description="O domínio do e-mail (bancoseguro.info) não é o oficial do banco (bancoisseguro.com.br). Sempre verifique o domínio.">
-            </RedFlag>
+        <div className="bg-white/90 backdrop-blur-sm p-4 border-b border-blue-100">
+          <p className="text-sm text-slate-700">
+            <strong>De: </strong> {emailData.phishingSenderName} &lt;{emailData.phishingSenderEmail}
+            <RedFlag number="1" description="O domínio do e-mail (bancoseguro.info) não é o oficial do banco (bancoisseguro.com.br). Sempre verifique o domínio." />
           </p>
           <p className="text-sm text-gray-700 mt-1">
-            <strong>Para:</strong>
+            <strong>Para: </strong>
             {emailData.recipientEmail}
           </p>
           <p className="text-sm text-gray-700 mt-1">
-            <strong>Assunto:</strong>
+            <strong>Assunto: </strong>
             {emailData.subject}
             <RedFlag
               number="2"
@@ -64,12 +60,8 @@ function FakeEmail() {
 
         <div className="p-6 md:p-8">
           <div className="flex items-center justify-start mb-6">
-            <span className="text-3xl font-extrabold text-blue-800">
-              Banco
-            </span>
-            <span className="text-3xl font-light text-gray-700">
-              MaisSeguro
-            </span>
+            <span className="text-3xl font-extrabold text-blue-700">Banco</span>
+            <span className="text-3xl font-light text-slate-700">MaisSeguro</span>
           </div>
 
           <h1 className="text-2xl md:text-3xl font-bold text-black-700 mb-6">
@@ -92,32 +84,28 @@ function FakeEmail() {
             Detectamos uma atividade incomum e não autorizada em sua conta corrente. Por segurança, suas credenciais de acesso foram temporariamente suspensas para evitar fraudes.
           </p>
 
-          <div className="my-6 p-4 bg-red-50 border border-red-200 rounded-md">
+          <div className="my-6 p-4 bg-red-50/80 backdrop-blur-sm border border-red-200 rounded-lg">
             <p className="font-semibold text-red-800 mb-2">Detalhes da Atividade Suspeita:</p>
             <ul className="list-disc list-inside text-sm text-red-700 space-y-1">
               <li>
                 <strong>
                   Data/Hora:
-                </strong>
-                {emailData.date}
+                </strong> {emailData.date}
               </li>
               <li>
                 <strong>
                   IP Suspeito:
-                </strong>
-                {emailData.ipAddress}
+                </strong> {emailData.ipAddress}
               </li>
               <li>
                 <strong>
                   Localização:
-                </strong>
-                {emailData.location}
+                </strong> {emailData.location}
               </li>
               <li>
                 <strong>
                   Tipo:
-                </strong>
-                Tentativa de login a partir de dispositivo não reconhecido.
+                </strong> Tentativa de login a partir de dispositivo não reconhecido.
               </li>
             </ul>
           </div>
@@ -138,13 +126,10 @@ function FakeEmail() {
               target="_blank"
               rel="noopener noreferrer"
               onClick={handleClick}
-              className="inline-block bg-gray-700 text-white font-bold text-lg px-8 py-4 rounded-full hover:bg-gray-800 transition-colors shadow-lg"
+              className="inline-block bg-gradient-to-r from-blue-600 to-blue-800 text-white font-bold text-lg px-8 py-4 rounded-xl hover:scale-105 transition-transform shadow-lg"
             >
               Verifique sua Identidade Agora
-              <RedFlag
-                number="6"
-                description="Passe o mouse sobre o botão (ou inspecione o elemento) para ver que o link real (seguranca-bancoseguro.xyz) não pertence ao banco oficial (bancoisseguro.com.br). Sempre verifique o link antes de clicar!">
-              </RedFlag>
+              <RedFlag number="6" description="Passe o mouse sobre o botão (ou inspecione o elemento) para ver que o link real (seguranca-bancoseguro.xyz) não pertence ao banco oficial (bancoisseguro.com.br). Sempre verifique o link antes de clicar!" />
             </a>
           </div>
 
@@ -153,7 +138,7 @@ function FakeEmail() {
           </p>
         </div>
 
-        <div className="bg-gray-50 p-6 text-center text-xs text-gray-500 border-t">
+        <div className="bg-blue-50/80 backdrop-blur-sm p-6 text-center text-xs text-slate-600 border-t border-blue-100">
           <p>
             Este é um e-mail de segurança automático. Por favor, não responda a esta mensagem.
           </p>
@@ -171,7 +156,7 @@ function FakeEmail() {
         <div className="bg-transparent rounded-xl mt-8 mb-8 mr-8 flex justify-end">
           <a
             href='/tips/email'
-            className="bg-blue-600 text-white font-bold text-lg px-4 py-2 rounded-lg hover:bg-blue-700 transition-transform transform hover:scale-105 shadow-lg"
+            className="bg-gradient-to-r from-blue-600 to-blue-800 text-white font-bold text-lg px-4 py-2 rounded-lg hover:scale-105 transition-transform shadow-lg"
           >
             Próximo
           </a>
