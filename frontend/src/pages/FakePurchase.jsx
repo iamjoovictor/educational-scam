@@ -62,6 +62,12 @@ function FakePurchase() {
   return (
     <div className="bg-white min-h-screen">
       <header className="bg-[#131921] text-white">
+        <div className="bg-transparent text-white rounded-xl pt-8 flex justify-center">
+          <h1 className="text-2xl text-white font-bold text-slate-800">
+            Golpe - Falso Pagamento
+          </h1>
+        </div>
+
         <div className="container mx-auto max-w-7xl px-4 py-3 flex items-center justify-between">
           <div className="flex items-center gap-6">
             <div className="flex items-center gap-2">
