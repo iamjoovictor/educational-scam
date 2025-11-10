@@ -4,17 +4,17 @@ import { useNavigate } from 'react-router-dom';
 import RedFlag from './RedFlag';
 
 const emailData = {
-  bankName: "Banco Mais Seguro",
-  bankOfficialEmail: "contato@bancoisseguro.com.br",
-  phishingSenderName: "Segurança Banco Mais Seguro",
-  phishingSenderEmail: "alerta.seguranca@bancoseguro.info",
+  bankName: "Caixa Econômica Federal",
+  bankOfficialEmail: "atendimento@caixa.gov.br",
+  phishingSenderName: "Segurança Caixa",
+  phishingSenderEmail: "seguranca@caixa-economica.com.br",
   recipientName: "Caros clientes",
   recipientEmail: "seuemail@exemplo.com",
   subject: "Alerta Urgente: Tentativa de Acesso Não Autorizado em Sua Conta",
   date: new Date().toLocaleDateString('pt-BR', { year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' }),
   ipAddress: "192.168.1.100",
   location: "São Paulo, Brasil (IP desconhecido)",
-  phishingLink: "http://seguranca-bancoseguro.xyz/login/validar-dados-urgente"
+  phishingLink: "http://seguranca-caixa.xyz/login/validar-dados-urgente"
 };
 
 function FakeEmail() {
@@ -41,8 +41,8 @@ function FakeEmail() {
 
         <div className="bg-white/90 backdrop-blur-sm p-4 border-b border-blue-100">
           <p className="text-sm text-slate-700">
-            <strong>De: </strong> {emailData.phishingSenderName} &lt;{emailData.phishingSenderEmail}
-            <RedFlag number="1" description="O domínio do e-mail (bancoseguro.info) não é o oficial do banco (bancoisseguro.com.br). Sempre verifique o domínio." />
+            <strong>De: </strong> {emailData.phishingSenderName} &lt;{emailData.phishingSenderEmail}&gt;
+            <RedFlag number="1" description="O domínio do e-mail (caixa-economica.com.br) não é o oficial da Caixa (caixa.gov.br). Sempre verifique o domínio." />
           </p>
           <p className="text-sm text-gray-700 mt-1">
             <strong>Para: </strong>
@@ -60,15 +60,14 @@ function FakeEmail() {
 
         <div className="p-6 md:p-8">
           <div className="flex items-center justify-start mb-6">
-            <span className="text-3xl font-extrabold text-blue-700">Banco</span>
-            <span className="text-3xl font-light text-slate-700">MaisSeguro</span>
+            <span className="text-3xl font-extrabold text-blue-700">CAIXA</span>
           </div>
 
-          <h1 className="text-2xl md:text-3xl font-bold text-black-700 mb-6">
+          <h1 className="text-2xl md:text-3xl font-bold text-blue-700 mb-6">
             Ação Urgente Necessária: Tentativa de Acesso Suspeito à Sua Conta!
             <RedFlag
               number="3"
-              description="E-mails legítimos de bancos raramente usam uma linguagem tão alarmante e vermelha para alertas de segurança.">
+              description="E-mails legítimos da Caixa raramente usam uma linguagem tão alarmante para alertas de segurança.">
             </RedFlag>
           </h1>
 
@@ -81,7 +80,7 @@ function FakeEmail() {
           </p>
 
           <p className="mt-4 text-gray-800 text-base leading-relaxed">
-            Detectamos uma atividade incomum e não autorizada em sua conta corrente. Por segurança, suas credenciais de acesso foram temporariamente suspensas para evitar fraudes.
+            Detectamos uma atividade incomum e não autorizada em sua conta corrente Caixa. Por segurança, suas credenciais de acesso foram temporariamente suspensas para evitar fraudes.
           </p>
 
           <div className="my-6 p-4 bg-red-50/80 backdrop-blur-sm border border-red-200 rounded-lg">
@@ -129,7 +128,7 @@ function FakeEmail() {
               className="inline-block bg-gradient-to-r from-blue-600 to-blue-800 text-white font-bold text-lg px-8 py-4 rounded-xl hover:scale-105 transition-transform shadow-lg"
             >
               Verifique sua Identidade Agora
-              <RedFlag number="6" description="Passe o mouse sobre o botão (ou inspecione o elemento) para ver que o link real (seguranca-bancoseguro.xyz) não pertence ao banco oficial (bancoisseguro.com.br). Sempre verifique o link antes de clicar!" />
+              <RedFlag number="6" description="Passe o mouse sobre o botão (ou inspecione o elemento) para ver que o link real (seguranca-caixa.xyz) não pertence ao site oficial da Caixa (caixa.gov.br). Sempre verifique o link antes de clicar!" />
             </a>
           </div>
 
@@ -146,10 +145,10 @@ function FakeEmail() {
             Para sua segurança, nunca compartilhe suas senhas ou dados bancários por e-mail ou telefone.
           </p>
           <p className="mt-2">
-            &copy; {new Date().getFullYear()} {emailData.bankName} S.A. Todos os direitos reservados.
+            &copy; {new Date().getFullYear()} {emailData.bankName}. Todos os direitos reservados.
           </p>
           <p className="mt-1">
-            Central de Atendimento: 0800-123-4567
+            Central de Atendimento: 0800-726-0101
           </p>
         </div>
 
