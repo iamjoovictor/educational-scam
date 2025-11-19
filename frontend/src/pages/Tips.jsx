@@ -30,8 +30,8 @@ const TipsMap = {
       "Evite pagar pix ou boletos enviados por e-mail sem verificação.",
       "Use apps oficiais para escanear QR Codes."
     ],
-    next: '/',
-    nextButton: 'Finalizar'
+    next: '/quiz',
+    nextButton: 'Ir para quiz'
   }
 };
 

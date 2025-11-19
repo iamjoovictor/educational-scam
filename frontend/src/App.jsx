@@ -10,6 +10,8 @@ import UsersTable from './pages/UsersTable';
 import LogsTable from './pages/LogsTable';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Quiz from './pages/Quiz';
+import ThankYou from './pages/ThankYou';
 
 function App() {
   return (
@@ -23,6 +25,8 @@ function App() {
           <Route path="/simulations/email" element={<FakeEmail />} />
           <Route path="/simulations/payment" element={<FakePayment/>} />
           <Route path="/tips/:type" element={<Tips />} />
+          <Route path="/quiz" element={<Quiz />} />
+          <Route path="/thankyou" element={<ThankYou />} />
           <Route path="/users" element={<UsersTable />} />
           <Route path="/logs" element={<LogsTable />} />
         </Routes>
