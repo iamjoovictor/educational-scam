@@ -3,6 +3,7 @@ import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 import { Star, MapPin, ShoppingCart, Lock } from 'lucide-react';
 import RedFlag from './RedFlag';
+import { API_BASE_URL } from '../config';
 
 const product = {
   name: "iPhone 16 Pro Max",
@@ -51,7 +52,7 @@ function FakePurchase() {
 
   const handleClick = async () => {
     toast.error("⚠️ Isso foi um golpe simulado! Nunca insira dados em sites suspeitos.");
-    await fetch('http://localhost:3001/api/logs', {
+    await fetch(`${API_BASE_URL}/logs`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ tipo: 'compra' })

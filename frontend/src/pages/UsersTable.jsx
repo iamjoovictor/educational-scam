@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
+import { API_BASE_URL } from '../config';
 
 function UsersTable() {
     const [users, setUsers] = useState([]);
 
     async function getListUsers() {
         try {
-            const response = await fetch('http://localhost:3001/api/usuarios', {
+            const response = await fetch(`${API_BASE_URL}/usuarios`, {
                 method: 'GET',
                 headers: { 'Content-Type': 'application/json' },
             });

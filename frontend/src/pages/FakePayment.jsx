@@ -3,6 +3,7 @@ import { QrCode, CreditCard, Barcode, ShieldCheck } from 'lucide-react';
 import RedFlag from './RedFlag';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
+import { API_BASE_URL } from '../config';
 
 const FakePayment = () => {
     const [timeLeft, setTimeLeft] = useState(10 * 60);
@@ -34,7 +35,7 @@ const FakePayment = () => {
 
     const handleClick = async () => {
         toast.error("⚠️ Isso foi um golpe simulado! Bastante atênção para o valor e o destinatário do pagamento.");
-        await fetch('http://localhost:3001/api/logs', {
+        await fetch(`${API_BASE_URL}/logs`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ tipo: 'pagamento' })

@@ -2,6 +2,7 @@ import React from 'react';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 import RedFlag from './RedFlag';
+import { API_BASE_URL } from '../config';
 
 const emailData = {
   bankName: "Caixa Econômica Federal",
@@ -22,7 +23,7 @@ function FakeEmail() {
 
   const handleClick = async () => {
     toast.error("⚠️ Isso foi um golpe simulado! Nunca envie dados por e-mail suspeito.");
-    await fetch('http://localhost:3001/api/logs', {
+    await fetch(`${API_BASE_URL}/logs`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ tipo: 'email' })

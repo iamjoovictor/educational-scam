@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
+import { API_BASE_URL } from '../config';
 
 function LogsTable() {
     const [logs, setLogs] = useState([]);
 
     async function getListUsers() {
         try {
-            const response = await fetch('http://localhost:3001/api/logs', {
+            const response = await fetch(`${API_BASE_URL}/logs`, {
                 method: 'GET',
                 headers: { 'Content-Type': 'application/json' },
             });

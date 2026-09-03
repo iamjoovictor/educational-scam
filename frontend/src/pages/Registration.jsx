@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { API_BASE_URL } from '../config';
 
 function Registration() {
   const [name, setName] = useState('');
@@ -10,7 +11,7 @@ function Registration() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await fetch('http://localhost:3001/api/usuarios', {
+    await fetch(`${API_BASE_URL}/usuarios`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ nome: name, idade: age, turma: course })
