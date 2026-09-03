@@ -21,7 +21,7 @@ function Simulations() {
           <h2 className="text-3xl font-bold text-center mb-2 text-slate-800">Nossa Missão</h2>
           <p className="text-center text-slate-600 mb-8">O conhecimento é a sua melhor defesa.</p>
           <p className="text-lg leading-relaxed text-justify text-slate-700">
-            Golpes online estão cada vez mais sofisticados. E-mails de phishing, lojas falsas e páginas de pagamento fraudulentas são criados para parecerem perfeitamente legítimos, enganando até os usuários mais atentos. Nosso objetivo é simples: **capacitar você**. Através de simulações interativas e realistas, ensinamos você a identificar os sinais de alerta que os golpistas não querem que você veja.
+            Golpes online estão cada vez mais sofisticados. E-mails de phishing, lojas falsas e páginas de pagamento fraudulentas são criados para parecerem perfeitamente legítimos, enganando até os usuários mais atentos. Nosso objetivo é simples: <strong>capacitar você</strong>. Através de simulações interativas e realistas, ensinamos você a identificar os sinais de alerta que os golpistas não querem que você veja.
           </p>
         </section>
 
@@ -43,7 +43,7 @@ function Simulations() {
               </div>
               <h3 className="text-xl font-semibold mb-2 text-slate-800">2. Identifique os Sinais</h3>
               <p className="text-slate-600">
-                Nossas simulações destacam os "sinais de alerta" (red flags) em cada cenário, como links suspeitos e dados de pagamento incorretos.
+                Nossas simulações destacam os &quot;sinais de alerta&quot; (red flags) em cada cenário, como links suspeitos e dados de pagamento incorretos.
               </p>
             </div>
             <div className="flex flex-col items-center">
