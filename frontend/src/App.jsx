@@ -1,6 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Registration from './pages/Registration';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Simulations from './pages/Simulations';
 import FakePurchase from './pages/FakePurchase';
 import FakeEmail from './pages/FakeEmail';
@@ -19,8 +18,8 @@ function App() {
       <Router>
         <ToastContainer />
         <Routes>
-          <Route path="/" element={<Registration />} />
-          <Route path="/simulations" element={<Simulations />} />
+          <Route path="/" element={<Simulations />} />
+          <Route path="/simulations" element={<Navigate to="/" replace />} />
           <Route path="/simulations/purchase" element={<FakePurchase />} />
           <Route path="/simulations/email" element={<FakeEmail />} />
           <Route path="/simulations/payment" element={<FakePayment/>} />
